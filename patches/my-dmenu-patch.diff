@@ -1,0 +1,44 @@
+diff --git a/config.def.h b/config.def.h
+index 1edb647..f4f7b80 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -4,13 +4,14 @@
+ static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
+ /* -fn option overrides fonts[0]; default X11 font or font set */
+ static const char *fonts[] = {
+-	"monospace:size=10"
++	"Inconsolata Nerd Font:size=10"
+ };
+ static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+ static const char *colors[SchemeLast][2] = {
+ 	/*     fg         bg       */
+-	[SchemeNorm] = { "#bbbbbb", "#222222" },
+-	[SchemeSel] = { "#eeeeee", "#005577" },
++	[SchemeNorm] = { "#c5c8c6", "#1d1f21" },
++	[SchemeSel] = { "#c5c8c6", "#256083" },
++	[SchemePrompt] = { "#1d1f21", "#50a2af" },
+ 	[SchemeOut] = { "#000000", "#00ffff" },
+ };
+ /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
+diff --git a/dmenu.c b/dmenu.c
+index 65f25ce..fc30a5c 100644
+--- a/dmenu.c
++++ b/dmenu.c
+@@ -26,7 +26,7 @@
+ #define TEXTW(X)              (drw_fontset_getwidth(drw, (X)) + lrpad)
+ 
+ /* enums */
+-enum { SchemeNorm, SchemeSel, SchemeOut, SchemeLast }; /* color schemes */
++enum { SchemeNorm, SchemeSel, SchemePrompt, SchemeOut, SchemeLast }; /* color schemes */
+ 
+ struct item {
+ 	char *text;
+@@ -137,7 +137,7 @@ drawmenu(void)
+ 	drw_rect(drw, 0, 0, mw, mh, 1, 1);
+ 
+ 	if (prompt && *prompt) {
+-		drw_setscheme(drw, scheme[SchemeSel]);
++		drw_setscheme(drw, scheme[SchemePrompt]);
+ 		x = drw_text(drw, x, 0, promptw, bh, lrpad / 2, prompt, 0);
+ 	}
+ 	/* draw input field */
