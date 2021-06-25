@@ -23,7 +23,7 @@
     sudo.enable = false;
   };
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos-venus"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
@@ -32,10 +32,6 @@
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.interfaces.enp0s25.useDHCP = true;
-  networking.interfaces.wlp3s0.useDHCP = true;
-  networking.interfaces.wwp0s20u10i6.useDHCP = true;
   networking.networkmanager.enable = true;
 
   # Configure network proxy if necessary
@@ -100,7 +96,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ashley = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "kvm" "networkmanager" ]; # Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile. To search, run:
