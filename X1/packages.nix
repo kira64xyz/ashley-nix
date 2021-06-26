@@ -9,10 +9,10 @@
     yubikey-personalization
     monero font-awesome
     firefox git exiftool
-    mononoki dunst st dwm 
+    noto-fonts-emoji dunst st dwm 
     python3 qemu nmap
-    wireshark tor-browser-bundle-bin
-    xss-lock i3lock
+    wireshark torbrowser
+    xss-lock i3lock noto-fonts-cjk
     toxic tor dmenu sxiv
     gimp tmux imagemagick
     unzip brightnessctl
