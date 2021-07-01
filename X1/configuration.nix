@@ -56,12 +56,12 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  services.xserver.windowManager.dwm.enable = true;
+  services.xserver.windowManager.bspwm.enable = true;
   services.xserver.displayManager.startx.enable = true;
 
   # Configure keymap in X11
   services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkbOptions = "caps:swapescape";
 
   services.xserver.videoDrivers = ["intel"];
   services.xserver.deviceSection = ''
@@ -81,6 +81,7 @@
 
   # Enable sound.
   # sound.enable = true;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -139,7 +140,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   ];
 
   environment.variables = {

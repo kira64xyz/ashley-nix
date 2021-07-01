@@ -13,11 +13,11 @@ services.dunst = {
       separator_height = 2;
       padding = 8;
       horizontal_padding = 8;
-      frame_width = 3;
-      color = "#ffffff";
-      frame_color = "#565d6d";
-      separator_color = "#565d6d";
-      font = "Inconsolata Nerd Font 12";
+      frame_width = 2;
+      color = "#bcb8cc";
+      frame_color = "#817f7f";
+      separator_color = "#817f7f";
+      font = "Hack 10";
       line_height = 0;
       markup = "full";
       format = "<b>%s</b>\n%b";
@@ -46,22 +46,20 @@ services.dunst = {
     };
 
     urgency_low = {
-      background = "#2f343f";
-      foreground = "#ffffff";
-      frame_color = "#50a2af";
+      background = "#242231";
+      foreground = "#bcb8cc";
       timeout = 10;
     };
     urgency_normal = {
-      background = "#2f343f";
-      foreground = "#ffffff";
-      frame_color = "#50a2af";
+      background = "#242231";
+      foreground = "#bcb8cc";
       timeout = 10;
     };
     urgency_critical = {
-      background = "#2f343f";
-      foreground = "#ffffff";
+      background = "#242231";
+      foreground = "#bcb8cc";
       frame_color = "#ff0099";
-      timeout = 10;
+      timeout = 20;
     };
   };
 }; 

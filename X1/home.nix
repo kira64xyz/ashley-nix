@@ -4,10 +4,12 @@
   imports = [
     ./packages.nix
     ./modules/bash.nix
-    ./modules/vim.nix
+    ./modules/nvim.nix
     ./modules/dunst.nix
     ./modules/locker.nix
     ./modules/tmux.nix
+    ./modules/sxhkd.nix
+    ./modules/bspwm.nix
     ./modules/git.nix
   ];
 
@@ -15,15 +17,6 @@
     (self: super: {
       st = super.st.overrideAttrs (_: {
         patches = [ ./patches/my-st-patch.diff ];
-      });
-      dwm = super.dwm.overrideAttrs (_: {
-        patches = [ 
-          ./patches/my-dwm-patch.diff 
-          ./patches/fibonacci.diff 
-          ./patches/attachbelow.diff 
-          ./patches/systray.diff 
-          ./patches/titlecolor.diff
-        ];
       });
       dmenu = super.dmenu.overrideAttrs (_: {
         patches = [ ./patches/my-dmenu-patch.diff ];
@@ -52,7 +45,7 @@
     ];
     fonts.fontconfig.allowType1 = true;
     fonts.fontconfig.defaultFonts.emoji = with pkgs; [
-      noto-fonts-emoji
+      siji
     ];
   };
 

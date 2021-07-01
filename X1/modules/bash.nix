@@ -34,8 +34,9 @@
       rm     = "rm -v";
       yt     = "youtube-dl --add-metadata -f 'bestvideo[height<=?1440]+bestaudio/best'";
       yta    = "yt -x -f bestaudio/best";
-      vi     = "vim";
       sdn    = "power.sh";
+      newqc  = "qemu-img create -f qcow2";
+      monero = "monero-wallet-cli --log-file /dev/null";
     };
     initExtra = ''
       set -o vi

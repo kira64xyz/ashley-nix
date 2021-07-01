@@ -1,5 +1,5 @@
 diff --git a/config.def.h b/config.def.h
-index 6f05dce..f49dbd6 100644
+index 6f05dce..db0f3ff 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -5,8 +5,8 @@
@@ -8,7 +8,7 @@ index 6f05dce..f49dbd6 100644
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 -static int borderpx = 2;
-+static char *font = "Inconsolata Nerd Font:pixelsize=16:antialias=true:autohint=true";
++static char *font = "Hack:pixelsize=13:antialias=true:autohint=true";
 +static int borderpx = 4;
  
  /*
@@ -65,8 +65,8 @@ index 6f05dce..f49dbd6 100644
 +  [15] = "#f0fff0", /* white   */
 +
 +  /* special colors */
-+  [256] = "#1d1f21", /* background */
-+  [257] = "#c5c8c6", /* foreground */
++  [256] = "#242231", /* background */
++  [257] = "#bcb8cc", /* foreground */
 +};
  
  /*
