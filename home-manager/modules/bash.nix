@@ -6,24 +6,19 @@
     enable = true;
 
     sessionVariables = {
-      EDITOR = "nvim";
+      PATH    = "$PATH:$HOME/bin";
+      EDITOR  = "vim";
+      VISUAL  = "vim";
       LESSHST = "/dev/null";
-      PATH = "$PATH:/home/ashley/scripts:/home/ashley/vm";
-    };
-    shellOptions = [
+    }; shellOptions = [
       "autocd"
     ];
     shellAliases = {
-      sudo   = "doas";
-      update = "update-system.sh";
-      hms    = "home-manager switch";
+      hms    = "home-manager switch --flake $HOME/.config/nixpkgs#kira";
       build  = "nix-build -E '((import <nixpkgs> {}).callPackage (import ./default.nix) { })'";
       myip   = "curl ipinfo.io/ip && echo";
-      ports  = "netstat -tulanp";
-      untar  = "tar zxvf";
-      mktar  = "tar cvfz";
-      sha    = "shasum -a 256";
       ls     = "ls --color";
+      lc     = "ls -F";
       la     = "ls -la";
       lh     = "ls -lh";
       lah    = "ls -lah";
@@ -32,16 +27,16 @@
       cp     = "cp -iv";
       mv     = "mv -iv";
       rm     = "rm -v";
-      yt     = "youtube-dl --add-metadata -f 'bestvideo[height<=?1440]+bestaudio/best'";
-      yta    = "yt -x -f bestaudio/best";
-      sdn    = "power.sh";
-      newqc  = "qemu-img create -f qcow2";
+      sxiv   = "nsxiv";
+      ytdl   = "yt-dlp --add-metadata -f 'bestvideo[height<=?1080]+bestaudio/best'";
+      ytdla  = "ytdl -x -f bestaudio/best";
+      sdn    = "poweroff";
       monero = "monero-wallet-cli --log-file /dev/null";
     };
     initExtra = ''
       set -o vi
       bind -m vi-insert 'Control-l: clear-screen'
-      PS1="\n\[\033[1;36m\]\w \$\[\033[0m\] "
+      PS1="\n\[\033[1;34m\]  \w \[\033[1;36m\]\$\[\033[0m\] "
     '';
   };
 

@@ -3,15 +3,16 @@
     enable = true;
     
     monitors = {
-      eDP1 = ["term" "web" "code" "music" "pass"];
+      LVDS-1 = ["1" "2" "3" "4" "5"];
+      DP-2   = ["1" "2" "3" "4" "5"];
     };
 
     rules = {
       "firefox" = {
-        desktop = "^3";
+        desktop = "^2";
       };
       "keepassxc" = {
-        desktop = "^2";
+        desktop = "^5";
       };
     };
 
@@ -25,6 +26,8 @@
     startupPrograms = [
       "sxhkd"
       "polybar top"
+      "picom"
+      "/home/kira/bin/wallpaper"
     ];
   };
 }
