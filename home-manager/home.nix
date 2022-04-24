@@ -4,12 +4,12 @@
   imports = [
     ./packages.nix
     ./modules/bash.nix
-    ./modules/vim.nix
-    ./modules/dunst.nix
     ./modules/tmux.nix
-    ./modules/sxhkd.nix
-    ./modules/bspwm.nix
+    ./modules/vim.nix
     ./modules/git.nix
+    ./modules/dunst.nix
+    ./modules/bspwm.nix
+    ./modules/sxhkd.nix
   ];
 
   nixpkgs.overlays = [

@@ -2,30 +2,55 @@
 
 {
   home.packages = with pkgs;[
-    mpv ffmpeg xorg.xev
-    polybar inconsolata-nerdfont
-    monero catgirl mutt
-    gnome3.adwaita-icon-theme
-    xclip yubico-pam htop
-    yubikey-personalization
-    firefox git exiftool
-    noto-fonts-emoji dunst st
-    python3 qemu nmap tcpdump
-    tor-browser-bundle-bin
-    i3lock noto-fonts-cjk
-    toxic tor dmenu nsxiv
-    gimp tmux imagemagick
-    unzip maim alsa-utils
-    nheko libnotify arp-scan
-    keepassxc qbittorrent
-    xwallpaper yt-dlp
-    plan9port newsboat
-    mpd ncmpcpp aria2
-    openssl picom
-    drawterm mpc-cli
+    # Mail
+    mutt urlview
+
+    # Media
+    mpv ffmpeg exiftool
+    mpd ncmpcpp mpc-cli
+    yt-dlp zathura
+    xwallpaper nsxiv
+    newsboat gimp 
+
+    # Chat
+    nheko catgirl toxic
+
+    # Games
     chocolateDoom
-    zathura quakespasm
-    xorg.xmodmap
+    quakespasm
     sameboy
+
+    # Networking & Internet
+    nmap tcpdump
+    arp-scan tor
+    qbittorrent
+    firefox ungoogled-chromium
+
+    # Development
+    git
+
+    # X11
+    xorg.xmodmap polybar 
+    xclip picom i3lock
+    dunst st dmenu maim
+    gnome3.adwaita-icon-theme
+
+    # Fonts
+    inconsolata-nerdfont
+    noto-fonts-cjk
+    noto-fonts-emoji 
+
+    # Yubikey
+    yubico-pam 
+    yubikey-personalization
+
+    # Plan 9
+    drawterm plan9port
+
+    # Misc
+    alsa-utils htop file
+    monero qemu tmux 
+    unzip libnotify 
+    keepassxc 
   ];
 }
