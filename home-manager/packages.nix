@@ -39,7 +39,7 @@
     # Fonts
     inconsolata-nerdfont
     noto-fonts-cjk
-    noto-fonts-emoji 
+    twemoji-color-font
 
     # Yubikey
     yubico-pam 
@@ -49,7 +49,7 @@
     drawterm plan9port
 
     # Misc
-    alsa-utils htop file
+    alsa-utils htop-vim file
     monero qemu tmux 
     unzip keepassxc
   ];

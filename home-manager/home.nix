@@ -36,13 +36,13 @@
     allowUnfree = false;
     nativeOnly = true;
     nixpkgs.config.fonts.fonts = with pkgs; [
-      noto-fonts-emoji
+      twemoji-color-font
       noto-fonts-cjk
       inconsolata-nerdfont
     ];
     fonts.fontconfig.allowType1 = true;
     fonts.fontconfig.defaultFonts.emoji = with pkgs; [
-      noto-fonts-emoji
+      twemoji-color-font
     ];
   };
 

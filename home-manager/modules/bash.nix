@@ -10,9 +10,12 @@
       EDITOR  = "nvim";
       VISUAL  = "nvim";
       LESSHST = "/dev/null";
-    }; shellOptions = [
+    };
+
+    shellOptions = [
       "autocd"
     ];
+
     shellAliases = {
       hms    = "home-manager switch --flake $HOME/.config/nixpkgs#kira";
       build  = "nix-build -E '((import <nixpkgs> {}).callPackage (import ./default.nix) { })'";
@@ -34,10 +37,11 @@
       sdn    = "poweroff";
       monero = "monero-wallet-cli --log-file /dev/null";
     };
+
     initExtra = ''
       set -o vi
       bind -m vi-insert 'Control-l: clear-screen'
-      PS1="\[\033[1;36m\]\u@\h \[\033[1;34m\]\w \$\[\033[0m\] "
+      PS1="\[\033[1;35m\]\u@\h \[\033[1;34m\]\w \$\[\033[0m\] "
     '';
   };
 
