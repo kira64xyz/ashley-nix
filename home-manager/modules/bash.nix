@@ -7,8 +7,8 @@
 
     sessionVariables = {
       PATH    = "$PATH:$HOME/bin";
-      EDITOR  = "vim";
-      VISUAL  = "vim";
+      EDITOR  = "nvim";
+      VISUAL  = "nvim";
       LESSHST = "/dev/null";
     }; shellOptions = [
       "autocd"
@@ -28,6 +28,7 @@
       mv     = "mv -iv";
       rm     = "rm -v";
       sxiv   = "nsxiv";
+      view   = "nvim -R";
       ytdl   = "yt-dlp --add-metadata -f 'bestvideo[height<=?1080]+bestaudio/best'";
       ytdla  = "ytdl -x -f bestaudio/best";
       sdn    = "poweroff";
@@ -36,7 +37,7 @@
     initExtra = ''
       set -o vi
       bind -m vi-insert 'Control-l: clear-screen'
-      PS1="\n\[\033[1;34m\]  \w \[\033[1;36m\]\$\[\033[0m\] "
+      PS1="\[\033[1;36m\]\u@\h \[\033[1;34m\]\w \$\[\033[0m\] "
     '';
   };
 

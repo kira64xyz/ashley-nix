@@ -3,17 +3,13 @@
     enable = true;
     
     monitors = {
-      LVDS-1 = ["1" "2" "3" "4" "5"];
-      DP-2   = ["1" "2" "3" "4" "5"];
+      LVDS-1 = [ "1" "2" "3" "4" "5" "6" ];
+      DP-2   = [ "1" "2" "3" "4" "5" "6" ];
     };
 
     rules = {
-      "firefox" = {
-        desktop = "^2";
-      };
-      "keepassxc" = {
-        desktop = "^5";
-      };
+      "firefox".desktop = "^2";
+      "qBittorrent".desktop = "^6";
     };
 
     settings = {
@@ -24,10 +20,8 @@
     };
 
     startupPrograms = [
-      "sxhkd"
-      "polybar top"
-      "picom"
       "/home/kira/bin/wallpaper"
+      "/home/kira/bin/remaps"
     ];
   };
 }

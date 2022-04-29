@@ -32,8 +32,7 @@ services.dunst = {
       always_run_script = true;
       title = "Dunst";
       class = "Dunst";
-      startup_notification = false;
-      force_xinerama = false;
+      icon_position = "left";
     };
 
     expertimental.per_monitor_dpi = false;

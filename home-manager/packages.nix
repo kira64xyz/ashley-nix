@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     # Mail
     mutt urlview
 
@@ -13,10 +13,10 @@
     newsboat gimp 
 
     # Chat
-    nheko catgirl toxic
+    catgirl toxic
 
     # Games
-    chocolateDoom
+    prboom-plus
     quakespasm
     sameboy
 
@@ -27,7 +27,8 @@
     firefox ungoogled-chromium
 
     # Development
-    git
+    git nixpkgs-review
+    github-cli
 
     # X11
     xorg.xmodmap polybar 
@@ -50,7 +51,6 @@
     # Misc
     alsa-utils htop file
     monero qemu tmux 
-    unzip libnotify 
-    keepassxc 
+    unzip keepassxc
   ];
 }

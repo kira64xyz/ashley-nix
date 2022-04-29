@@ -1,26 +1,26 @@
 { pkgs, ... }: {
 
-programs.vim = {
+programs.neovim = {
   enable = true;
+
+  viAlias = true;
+  vimAlias = true;
 
   plugins = with pkgs.vimPlugins; [
     vim-nix
   ];
-  
+
   extraConfig = ''
     set completeopt=noinsert,menuone,noselect
 
     " some basic config
     syntax on
-    "set path+=**
-    "set wildmenu
     set relativenumber
     set number
     set splitbelow splitright
     set laststatus=2 " Enable white statusbar
     set ruler
     set autoindent
-    set autochdir
     set foldmethod=marker
     set foldlevel=0
     set title
@@ -28,23 +28,19 @@ programs.vim = {
     set backspace=indent,eol,start
     set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
     set t_Co=256
-    set term=xterm-256color
 
-    " turn on spellcheck
-    map <leader>z :setlocal spell! spelllang=en_us<CR>
-    
     " LaTeX/roff compile
     autocmd FileType tex,nroff map <leader>c :!vimcompiledoc %:r <CR><CR>
-    
+
     " execute shell/python script
     autocmd FileType py,sh map <leader>c :!./%<CR>
-    
+
     " map the window switching to just C-{h,j,k,l} for faster switching
     nnoremap <C-J> <C-W><C-J>
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
     nnoremap <C-H> <C-W><C-H>
-    
+
     nnoremap <C-Down> <C-W><C-J>
     nnoremap <C-Up> <C-W><C-K>
     nnoremap <C-Right> <C-W><C-L>
@@ -65,12 +61,18 @@ programs.vim = {
     map <F12> :bd!<CR>
     " Close fold
     map <leader>f :foldclose<CR>
-    
+
     " Theming
     syntax enable
     colorscheme luna-term
     set cursorline
-    
+
+    " Airline
+    "set laststatus=2
+    "set noshowmode
+    "set timeoutlen=50
+    "let g:airline_theme='luna'
+
     " map C-w a to do a vertical split, so i dont have to move my finger as much :)
     nnoremap <C-W>a <C-W>v
   '';

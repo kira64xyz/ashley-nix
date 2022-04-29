@@ -5,7 +5,7 @@
     ./packages.nix
     ./modules/bash.nix
     ./modules/tmux.nix
-    ./modules/vim.nix
+    ./modules/nvim.nix
     ./modules/git.nix
     ./modules/dunst.nix
     ./modules/bspwm.nix
