@@ -35,15 +35,20 @@
   nixpkgs.config = {
     allowUnfree = false;
     nativeOnly = true;
-    nixpkgs.config.fonts.fonts = with pkgs; [
-      twemoji-color-font
-      noto-fonts-cjk
-      inconsolata-nerdfont
-    ];
-    fonts.fontconfig.allowType1 = true;
-    fonts.fontconfig.defaultFonts.emoji = with pkgs; [
-      twemoji-color-font
-    ];
+    fonts = {
+      enableDefaultFonts = true;
+      fonts = with pkgs; [
+        inconsolata-nerdfont
+        twemoji-color-font
+        ipafont
+      ];
+      fontconfig = {
+        allowType1 = true;
+        defaultFonts.emoji = with pkgs; [
+          twemoji-color-font
+        ];
+      };
+    };
   };
 
   # Shell Options
