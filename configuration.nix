@@ -6,20 +6,18 @@
       ./hardware-configuration.nix
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.loader.grub = { 
-    enable = true;
-    version = 2;
-    device = "nodev";
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader.grub = { 
+      enable = true;
+      version = 2;
+      device = "nodev";
+    };
   };
 
   networking = { 
     hostName = "fragile";
     networkmanager.enable = true;
-    useDHCP = false;
-    interfaces.eno0.useDHCP = true;
-    interfaces.wlp2s0.useDHCP = true;
   };
 
   time.timeZone = "Europe/Berlin";
@@ -36,9 +34,11 @@
     displayManager.startx.enable = true;
     windowManager.bspwm.enable = true;
     layout = "gb";
+    videoDrivers = [ "intel" ];
+    deviceSection = ''
+      Option "TearFree" "true"
+    '';
   };
-
-  hardware.trackpoint.emulateWheel = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -48,6 +48,10 @@
     #jack.enable = true;
   };
 
+  services.openntpd.enable = true;
+
+  hardware.trackpoint.emulateWheel = true;
+
   users.users.kira = {
     isNormalUser = true;
     extraGroups = [ "wheel" "network" "kvm" ];
@@ -55,9 +59,13 @@
 
   environment.systemPackages = with pkgs; [
     curl
+    neovim
   ];
 
-  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "gtk2";
+  };
 
   nix = {
     package = pkgs.nixUnstable;

@@ -3,12 +3,13 @@
     enable = true;
     
     monitors = {
-      LVDS-1 = [ "1" "2" "3" "4" "5" "6" ];
-      DP-2   = [ "1" "2" "3" "4" "5" "6" ];
+      LVDS1 = [ "1" "2" "3" "4" "5" "6" ];
+      DP2   = [ "1" "2" "3" "4" "5" "6" ];
     };
 
     rules = {
       "firefox".desktop = "^2";
+      "Chromium".desktop = "^2";
       "qBittorrent".desktop = "^6";
     };
 

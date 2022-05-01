@@ -4,7 +4,7 @@
   programs.tmux = {
     enable = true;
     keyMode = "vi";
-    shortcut = "z";
+    shortcut = "a";
     terminal = "tmux-256color";
     escapeTime = 0;
     extraConfig = ''
@@ -16,7 +16,7 @@
       bind-key k select-pane -U
       bind-key l select-pane -R
       bind-key h select-pane -L
-      bind-key x kill-server
+      bind-key x send-prefix
       bind-key C new-window -c "#{pane_current_path}"
       bind-key -n C-J previous-window
       bind-key -n C-K next-window

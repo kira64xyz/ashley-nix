@@ -24,7 +24,8 @@
     nmap tcpdump
     arp-scan tor
     qbittorrent
-    firefox ungoogled-chromium
+    ungoogled-chromium
+    firefox
 
     # Development
     git nixpkgs-review
@@ -32,7 +33,7 @@
 
     # X11
     xorg.xmodmap polybar 
-    xclip picom i3lock
+    xclip xcompmgr i3lock
     dunst st dmenu maim
     gnome3.adwaita-icon-theme
 

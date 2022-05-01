@@ -7,7 +7,7 @@
       "super + shift + r" = "bspc wm -r";
       "super + {_, shift + } {1-6,0}" = "bspc {desktop -f, node -d} '^{1-6,10}'";
       "super + {_, shift + } Tab" = "bspc {desktop -f, node -d} 'last'";
-      "super + {_, shift + } space" = "bspc node focused -t {tiled, floating}";
+      "super + {_, shift + } space" = "bspc node focused -t {floating, tiled}";
       "super + shift + Escape" = "pkill -USR1 -x sxhkd";
       "super + shift + e" = "sysact";
       "super + {_, shift + }c" = "bspc node -{c,k}";
