@@ -30,12 +30,15 @@
       cp     = "cp -iv";
       mv     = "mv -iv";
       rm     = "rm -v";
-      sxiv   = "nsxiv";
+      mk     = "make";
+      sxiv   = "imv";
       view   = "nvim -R";
+      wetter = "curl wttr.in/Berlin";
       ytdl   = "yt-dlp --add-metadata -f 'bestvideo[height<=?1080]+bestaudio/best'";
       ytdla  = "ytdl -x -f bestaudio/best";
       sdn    = "poweroff";
       monero = "monero-wallet-cli --log-file /dev/null";
+      boom   = "SDL_VIDEODRIVER=x11 prboom-plus";
     };
 
     initExtra = ''
@@ -44,5 +47,4 @@
       PS1="\[\033[1;35m\]\u@\h \[\033[1;34m\]\w \$\[\033[0m\] "
     '';
   };
-
 }

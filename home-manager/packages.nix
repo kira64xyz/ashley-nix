@@ -9,7 +9,6 @@
     mpv ffmpeg exiftool
     mpd ncmpcpp mpc-cli
     yt-dlp zathura
-    xwallpaper nsxiv
     newsboat gimp 
 
     # Chat
@@ -25,22 +24,25 @@
     arp-scan tor
     qbittorrent
     ungoogled-chromium
-    firefox
+    firefox i2pd
 
     # Development
     git nixpkgs-review
     github-cli
 
-    # X11
-    xorg.xmodmap polybar 
-    xclip xcompmgr i3lock
-    dunst st dmenu maim
+    # Wayland
+    swaylock-fancy
+    wl-clipboard swaybg
+    dunst bemenu
+    wlr-randr imv
+    sway-contrib.grimshot
     gnome3.adwaita-icon-theme
 
     # Fonts
+    fira-code
     inconsolata-nerdfont
     noto-fonts-cjk
-    twemoji-color-font
+    noto-fonts-emoji
 
     # Yubikey
     yubico-pam 

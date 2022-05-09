@@ -3,34 +3,14 @@
 {
   imports = [
     ./packages.nix
+    ./modules/alacritty.nix
     ./modules/bash.nix
-    ./modules/tmux.nix
-    ./modules/nvim.nix
-    ./modules/git.nix
     ./modules/dunst.nix
-    ./modules/bspwm.nix
-    ./modules/sxhkd.nix
+    ./modules/git.nix
+    ./modules/nvim.nix
+    ./modules/sway/sway.nix
+    ./modules/tmux.nix
   ];
-
-  nixpkgs.overlays = [
-    (self: super: {
-      st = super.st.overrideAttrs (_: {
-        patches = [ ./patches/st.diff ];
-      });
-      dmenu = super.dmenu.overrideAttrs (_: {
-        patches = [ ./patches/dmenu.diff ];
-      });
-    })
-  ];
-
-  systemd.user.targets.xsession = {
-    Unit = {
-      Description = "xorg session";
-      BindsTo = [ "graphical-session.target" ];
-      Wants = [ "graphical-session-pre.target" ];
-      After = [ "graphical-session-pre.target" ];
-    };
-  };
 
   nixpkgs.config = {
     allowUnfree = false;
@@ -38,20 +18,20 @@
     fonts = {
       enableDefaultFonts = true;
       fonts = with pkgs; [
+        fira-code
         inconsolata-nerdfont
-        twemoji-color-font
-        ipafont
+        noto-fonts-emoji
+        noto-fonts-cjk
       ];
       fontconfig = {
         allowType1 = true;
         defaultFonts.emoji = with pkgs; [
-          twemoji-color-font
+          noto-fonts-emoji
         ];
       };
     };
   };
 
-  # Shell Options
   programs.command-not-found.enable = true;
 
   fonts.fontconfig.enable = true;

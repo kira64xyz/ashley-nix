@@ -28,18 +28,6 @@
     keyMap = "uk";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    displayManager.startx.enable = true;
-    windowManager.bspwm.enable = true;
-    layout = "gb";
-    videoDrivers = [ "intel" ];
-    deviceSection = ''
-      Option "TearFree" "true"
-    '';
-  };
-
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -54,7 +42,7 @@
 
   users.users.kira = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "network" "kvm" ];
+    extraGroups = [ "wheel" "networkmanager" "kvm" ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -62,9 +50,11 @@
     neovim
   ];
 
+  programs.sway.enable = true;
+
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "gtk2";
+    pinentryFlavor = "gnome3";
   };
 
   nix = {
