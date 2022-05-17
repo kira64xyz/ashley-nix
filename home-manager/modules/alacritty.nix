@@ -7,7 +7,7 @@
     settings = {
       font = {
         size = 9;
-        normal.family = "Fira Code";
+        normal.family = "FuraCode Nerd Font";
       };
 
       window.padding = {

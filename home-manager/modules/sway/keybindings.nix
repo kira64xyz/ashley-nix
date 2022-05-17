@@ -2,7 +2,7 @@
 
 {
   "${mod}+Shift+q" = "exec [ \"$(printf \"No\\nYes\" | bmenu -i -p \"Would you like to exit i3?\")\" = \"Yes\" ] && ${pkgs.sway}/bin/swaymsg exit";
-  "${mod}+Shift+r" = "exec swaymsg restart";
+  "${mod}+Shift+r" = "reload";
 
   "${mod}+p" = "exec ${pkgs.bemenu}/bin/bemenu-run --ff '#D9E0EE' --fb '#1E1E2E' --tf '#1E1E2E' --tb '#C9CBFF' --hf '#1E1E2E' --hb '#C9CBFF' --nf '#D9E0EE' --nb '#1E1E2E'";
 
@@ -11,18 +11,19 @@
   "${mod}+m" = "exec ${terminal} -e mutt";
   "${mod}+n" = "exec ${terminal} -e ncmpcpp";
   "${mod}+b" = "exec ${terminal} -e newsboat";
-  "${mod}+w" = "exec ${pkgs.firefox}/bin/firefox";
-  "${mod}+Shift+w" = "exec ${pkgs.ungoogled-chromium}/bin/chromium --enable-features=UseOzonePlatform --ozone-platform=wayland";
+  "${mod}+w" = "exec ${pkgs.tor-browser-bundle-bin}/bin/tor-browser";
+  "${mod}+Shift+w" = "exec ${pkgs.firefox}/bin/firefox";
 
   # Scripts
   "${mod}+x" = "exec dmenuplumb";
   "${mod}+Shift+x" = "exec dmenuhandler";
+  "${mod}+Shift+e" = "exec dock";
 
   # MPD
   "${mod}+Shift+o" = "exec music";
   "${mod}+Shift+p" = "exec mpc toggle";
-  "${mod}+Shift+bracketleft" = "exec mpc next";
-  "${mod}+Shift+bracketright" = "exec mpc prev";
+  "${mod}+Shift+bracketleft" = "exec mpc prev";
+  "${mod}+Shift+bracketright" = "exec mpc next";
 
   # Navigation
   "${mod}+h" = "focus left";
@@ -56,6 +57,7 @@
   "${mod}+7" = "workspace ${workspaces.ws7}";
   "${mod}+8" = "workspace ${workspaces.ws8}";
   "${mod}+9" = "workspace ${workspaces.ws9}";
+  "${mod}+0" = "workspace ${workspaces.ws10}";
   "${mod}+Tab" = "workspace back_and_forth";
   "${mod}+Shift+1" = "move container to workspace ${workspaces.ws1}";
   "${mod}+Shift+2" = "move container to workspace ${workspaces.ws2}";
@@ -66,6 +68,7 @@
   "${mod}+Shift+7" = "move container to workspace ${workspaces.ws7}";
   "${mod}+Shift+8" = "move container to workspace ${workspaces.ws8}";
   "${mod}+Shift+9" = "move container to workspace ${workspaces.ws9}";
+  "${mod}+Shift+0" = "move container to workspace ${workspaces.ws10}";
   "${mod}+Shift+Tab" = "move container to workspace back_and_forth";
 
   # Volume control
@@ -76,5 +79,5 @@
   "XF86ScreenSaver" = "exec ${pkgs.swaylock-fancy}/bin/swaylock-fancy";
 
   "Print" = "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot --notify save area";
-  "Shift+Print" = "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot --notify save screen";
+  "${mod}+Print" = "exec ${pkgs.sway-contrib.grimshot}/bin/grimshot --notify save screen";
 }

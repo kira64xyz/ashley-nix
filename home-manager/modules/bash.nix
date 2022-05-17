@@ -39,6 +39,7 @@
       sdn    = "poweroff";
       monero = "monero-wallet-cli --log-file /dev/null";
       boom   = "SDL_VIDEODRIVER=x11 prboom-plus";
+      quake  = "SDL_VIDEODRIVER=x11 quake";
     };
 
     initExtra = ''

@@ -6,15 +6,16 @@ let
   terminal = "alacritty";
 
   workspaces = {
-    ws1 = "1";
-    ws2 = "2";
-    ws3 = "3";
-    ws4 = "4";
-    ws5 = "5";
-    ws6 = "6";
-    ws7 = "7";
-    ws8 = "8";
-    ws9 = "9";
+    ws1  = "1";
+    ws2  = "2";
+    ws3  = "3";
+    ws4  = "4";
+    ws5  = "5";
+    ws6  = "6";
+    ws7  = "7";
+    ws8  = "8";
+    ws9  = "9";
+    ws10 = "10";
   };
 
   # Colors
@@ -36,9 +37,11 @@ in {
       modifier = mod;
       keybindings = import ./keybindings.nix { inherit pkgs mod workspaces terminal; };
       fonts = {
-        names = [ "Inconsolata Nerd Font" ];
-        size = 10.0;
+        names = [ "Fira Code" ];
+        size = 9.0;
       };
+
+      defaultWorkspace = "workspace ${workspaces.ws1}";
 
       gaps = {
         inner = 2;
@@ -47,8 +50,6 @@ in {
 
       window.commands = [
         { command = "border pixel 1"; criteria.class = "^.*"; }
-        { command = "move to workspace ${workspaces.ws2}"; criteria.class = "chromium-browser"; }
-        { command = "move to workspace ${workspaces.ws2}"; criteria.class = "firefox"; }
       ];
 
       startup = [
@@ -56,7 +57,7 @@ in {
       ];
 
       input."*" = {
-        xkb_variant = "gb";
+        xkb_layout = "eu";
         xkb_options = "caps:swapescape";
         repeat_delay = "300";
         repeat_rate = "50";

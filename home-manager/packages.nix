@@ -14,7 +14,7 @@
     # Chat
     catgirl toxic
 
-    # Games
+    # Games & Emulators
     prboom-plus
     quakespasm
     sameboy
@@ -23,12 +23,11 @@
     nmap tcpdump
     arp-scan tor
     qbittorrent
-    ungoogled-chromium
     firefox i2pd
+    tor-browser-bundle-bin
 
     # Development
-    git nixpkgs-review
-    github-cli
+    git
 
     # Wayland
     swaylock-fancy
@@ -36,13 +35,10 @@
     dunst bemenu
     wlr-randr imv
     sway-contrib.grimshot
-    gnome3.adwaita-icon-theme
 
     # Fonts
-    fira-code
-    inconsolata-nerdfont
+    (nerdfonts.override { fonts = [ "FiraCode" "Inconsolata" ]; })
     noto-fonts-cjk
-    noto-fonts-emoji
 
     # Yubikey
     yubico-pam 

@@ -12,23 +12,28 @@
     ./modules/tmux.nix
   ];
 
+  gtk = {
+    enable = true;
+
+    theme = {
+      name = "Arc-Dark";
+      package = pkgs.arc-theme;
+    };
+
+    iconTheme = {
+      name = "Arc";
+      package = pkgs.arc-icon-theme;
+    };
+  };
+
   nixpkgs.config = {
     allowUnfree = false;
     nativeOnly = true;
-    fonts = {
-      enableDefaultFonts = true;
-      fonts = with pkgs; [
-        fira-code
-        inconsolata-nerdfont
+    fonts.fontconfig = {
+      allowType1 = true;
+      defaultFonts.emoji = with pkgs; [
         noto-fonts-emoji
-        noto-fonts-cjk
       ];
-      fontconfig = {
-        allowType1 = true;
-        defaultFonts.emoji = with pkgs; [
-          noto-fonts-emoji
-        ];
-      };
     };
   };
 

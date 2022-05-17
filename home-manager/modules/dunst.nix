@@ -14,7 +14,7 @@
         padding = 8;
         horizontal_padding = 8;
         frame_width = 2;
-        font = "Inconsolata Nerd Font 12";
+        font = "FuraCode Nerd Font 10";
         line_height = 0;
         markup = "full";
         format = "<b>%s</b>\n%b";

@@ -6,10 +6,28 @@
 
     viAlias = true;
     vimAlias = true;
+    vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
       vim-nix
+      telescope-nvim
       catppuccin-nvim
+      nvim-web-devicons
+
+      {
+        plugin = lualine-nvim;
+        config = ''
+          lua << EOF
+            require('lualine').setup {
+              options = {
+                theme = "catppuccin",
+                section_separators = "|",
+                component_separators = "|"
+              }
+            }
+          EOF
+        '';
+      }
     ];
 
     extraConfig = ''
@@ -21,7 +39,7 @@
       set relativenumber
       set number
       set splitbelow splitright
-      set laststatus=2 " Enable white statusbar
+      "set laststatus=2 " Enable white statusbar
       set ruler
       set autoindent
       set foldmethod=marker
@@ -31,6 +49,8 @@
       set backspace=indent,eol,start
       set tabstop=4 softtabstop=0 shiftwidth=4 smarttab
       set t_Co=256
+      set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+      let g:mapleader="\<Space>"
 
       " Nix/C[++] options
       autocmd FileType nix,c,cpp set tabstop=2 softtabstop=0 shiftwidth=2 expandtab 
@@ -63,6 +83,8 @@
       map <F6> :echo @%<CR>
       " Show current working directory
       map <F7> :pwd<CR>
+      " Show non-visible chars
+      map <F10> :set list!<CR>
       " Close current buffer
       map <F12> :bd!<CR>
       " Close fold
@@ -75,6 +97,6 @@
       colorscheme catppuccin
       set cursorline
       set termguicolors
-    '';
+  '';
   };
 }
