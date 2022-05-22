@@ -12,7 +12,7 @@
   "${mod}+n" = "exec ${terminal} -e ncmpcpp";
   "${mod}+b" = "exec ${terminal} -e newsboat";
   "${mod}+w" = "exec ${pkgs.tor-browser-bundle-bin}/bin/tor-browser";
-  "${mod}+Shift+w" = "exec ${pkgs.firefox}/bin/firefox";
+  "${mod}+Shift+w" = "exec ${pkgs.qutebrowser}/bin/qutebrowser";
 
   # Scripts
   "${mod}+x" = "exec dmenuplumb";

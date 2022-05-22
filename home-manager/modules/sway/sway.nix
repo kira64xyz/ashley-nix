@@ -77,7 +77,7 @@ in {
         position = "bottom";
 
         fonts = {
-          names = [ "Inconsolata Nerd Font" ];
+          names = [ "Inconsolata" ];
           size = 10.0;
         };
 

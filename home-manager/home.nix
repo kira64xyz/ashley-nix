@@ -8,6 +8,7 @@
     ./modules/dunst.nix
     ./modules/git.nix
     ./modules/nvim.nix
+    ./modules/qutebrowser.nix
     ./modules/sway/sway.nix
     ./modules/tmux.nix
   ];
@@ -29,12 +30,7 @@
   nixpkgs.config = {
     allowUnfree = false;
     nativeOnly = true;
-    fonts.fontconfig = {
-      allowType1 = true;
-      defaultFonts.emoji = with pkgs; [
-        noto-fonts-emoji
-      ];
-    };
+    fonts.fontconfig.allowType1 = true;
   };
 
   programs.command-not-found.enable = true;

@@ -21,9 +21,8 @@
 
     # Networking & Internet
     nmap tcpdump
-    arp-scan tor
+    arp-scan tor i2pd
     qbittorrent
-    firefox i2pd
     tor-browser-bundle-bin
 
     # Development
@@ -37,7 +36,8 @@
     sway-contrib.grimshot
 
     # Fonts
-    (nerdfonts.override { fonts = [ "FiraCode" "Inconsolata" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    inconsolata
     noto-fonts-cjk
 
     # Yubikey
