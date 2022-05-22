@@ -1,24 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    loader.grub = { 
-      enable = true;
-      version = 2;
-      device = "nodev";
-    };
-  };
-
-  networking = { 
-    hostName = "fragile";
-    networkmanager.enable = true;
-  };
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
 
@@ -37,8 +20,6 @@
   };
 
   services.openntpd.enable = true;
-
-  hardware.trackpoint.emulateWheel = true;
 
   users.users.kira = {
     isNormalUser = true;
