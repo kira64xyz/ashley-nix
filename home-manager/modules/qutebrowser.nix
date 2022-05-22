@@ -1,25 +1,40 @@
 { pkgs, config, ... }:
 
 let
-  dracula-theme = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/dracula/qutebrowser/ba5bd6589c4bb8ab35aaaaf7111906732f9764ef/draw.py";
-    sha256 = "sha256-skZYKoB8KSf8VG+5vqlSkg1q7uNZxIY/AizgtPxYyjQ=";
-    name = "qutebrowser-dracula-theme.py";
+  catppuccin = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/NarutoXY/qutebrowser/main/catppuccin.py";
+    sha256 = "sha256-71XveJA3ndPFMbT5WMIxtlz4PlxbIRDdrMX7UqnIYRo=";
+    name = "qutebrowser-catppuccin.py";
   };
 in {
   programs.qutebrowser = {
     enable = true;
 
     # Apply theme
-    extraConfig = (builtins.readFile dracula-theme) + "blood(c)";
+    extraConfig = builtins.readFile catppuccin;
 
     settings = {
       colors.webpage.preferred_color_scheme = "dark";
       downloads.location.directory = "$HOME/downloads";
+
+      url = {
+        start_pages = "https://searx.puffyan.us";
+        default_page = "https://searx.puffyan.us";
+      };
     };
   
+    keyBindings = {
+      normal = {
+        "<Alt-o>" = "spawn --verbose --detach mpv {url}";
+        "<Alt-Shift-o>" = "hint links spawn --verbose --detach mpv {hint-url}";
+        "<Alt-c>" = "spawn wl-copy {url}";
+        "<Alt-Shift-c>" = "hint links spawn wl-copy {hint-url}";
+      };
+      prompt = { "<Alt-y>" = "prompt-yes"; };
+    };
+
     searchEngines = {
-      DEFAULT = "https://duckduckgo.com/?q={}";
+      DEFAULT = "https://searx.puffyan.us/search?q={}";
       git = "https://github.com/search?q={}";
       nixopts = "https://search.nixos.org/options?query={}&channel=unstable";
       nixpkgs = "https://search.nixos.org/packages?query={}&channel=unstable";
