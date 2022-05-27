@@ -26,7 +26,7 @@
     tor-browser-bundle-bin
 
     # Development
-    git
+    git jq
 
     # Wayland
     swaylock-fancy

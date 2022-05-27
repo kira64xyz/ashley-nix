@@ -3,6 +3,7 @@
 {
   "${mod}+Shift+q" = "exec [ \"$(printf \"No\\nYes\" | bmenu -i -p \"Would you like to exit i3?\")\" = \"Yes\" ] && ${pkgs.sway}/bin/swaymsg exit";
   "${mod}+Shift+r" = "reload";
+  "${mod}+Shift+b" = "border toggle";
 
   "${mod}+p" = "exec ${pkgs.bemenu}/bin/bemenu-run --ff '#D9E0EE' --fb '#1E1E2E' --tf '#1E1E2E' --tb '#C9CBFF' --hf '#1E1E2E' --hb '#C9CBFF' --nf '#D9E0EE' --nb '#1E1E2E'";
 
