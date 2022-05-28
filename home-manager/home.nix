@@ -3,6 +3,7 @@
 {
   imports = [
     ./packages.nix
+    ./modules/alacritty.nix
     ./modules/bash.nix
     ./modules/dunst.nix
     ./modules/foot.nix
@@ -17,8 +18,8 @@
     enable = true;
 
     theme = {
-      name = "Arc-Dark";
-      package = pkgs.arc-theme;
+      name = "Catppuccin-purple-dark";
+      package = pkgs.catppuccin-gtk;
     };
 
     iconTheme = {

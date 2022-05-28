@@ -20,9 +20,14 @@
         };
       };
 
+      "disk /" = {
+        position = 5;
+        settings.format = "%used/%total (%avail free)";
+      };
+
       memory = {
         position = 7;
-        settings.format = "%used/%total (%available)";
+        settings.format = "%used/%total (%available free)";
       };
 
       "tztime local" = {

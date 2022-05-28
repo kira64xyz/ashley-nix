@@ -3,7 +3,7 @@
 let
   mod = "Mod4";
 
-  terminal = "foot";
+  terminal = "alacritty";
 
   workspaces = {
     ws1  = "1";
@@ -37,7 +37,7 @@ in {
       modifier = mod;
       keybindings = import ./keybindings.nix { inherit pkgs mod workspaces terminal; };
       fonts = {
-        names = [ "Fira Code" ];
+        names = [ "FuraCode Nerd Font" ];
         size = 9.0;
       };
 

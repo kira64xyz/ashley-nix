@@ -10,8 +10,11 @@ in {
 
     settings = {
       main = {
+        bold-text-in-bright = "palette-based";
         font = "FuraCode Nerd Font:size=7";
+        notify = "dunstify -a \${app-id} -i \${app-id} \${title} \${body}";
         pad = "3x3";
+        underline-offset = 1.0;
       };
 
       key-bindings = {
@@ -38,7 +41,10 @@ in {
         clipboard-paste = "${mod}+v";
       };
 
-      cursor.beam-thickness = 0.5;
+      cursor = {
+        beam-thickness = 0.5;
+        underline-thickness = 0.5;
+      };
 
       colors = {
         background = "1E1E2E";

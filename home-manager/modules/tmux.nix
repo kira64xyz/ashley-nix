@@ -8,7 +8,7 @@
     terminal = "screen-256color";
     escapeTime = 0;
     extraConfig = ''
-      #set -ag terminal-overrides ",alacritty:RGB"
+      set -ag terminal-overrides ",alacritty:RGB"
       set -g status-style bg=black
       set -g status-style fg=white
       set -g set-titles on
