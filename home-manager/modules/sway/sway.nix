@@ -19,10 +19,11 @@ let
   };
 
   # Colors
-  foregroundColor = "#DDB6F2";
-  backgroundColor = "#1E1E2E";
-  textColor = "#D9E0EE";
-  inactiveTextColor = "#988BA2";
+  colorRosewater = "#f5e0dc";
+  colorMauve = "#cba6f7";
+  colorBase = "#1e1e2e";
+  colorText = "#cdd6f4";
+  colorSurface = "#585b70";
 in {
   imports = [
     ./bar.nix
@@ -64,10 +65,10 @@ in {
       };
 
       colors = {
-        focused = { background = "#81848c"; border = "#81848c"; childBorder = "#81848c"; text = textColor; indicator = "#81848c"; };
-        focusedInactive = { background = backgroundColor; border = backgroundColor; childBorder = backgroundColor; text = inactiveTextColor; indicator = backgroundColor; };
-        unfocused = { background = backgroundColor; border = backgroundColor; childBorder = backgroundColor; text = inactiveTextColor; indicator = backgroundColor; };
-        urgent = { background = "#e53935"; border = "e53935"; childBorder = "e53935"; text = textColor; indicator = backgroundColor; };
+        focused = { background = colorRosewater; border = colorRosewater; childBorder = colorRosewater; text = colorBase; indicator = colorRosewater; };
+        focusedInactive = { background = colorBase; border = colorRosewater; childBorder = colorRosewater; text = colorSurface; indicator = colorRosewater; };
+        unfocused = { background = colorBase; border = colorRosewater; childBorder = colorBase; text = colorText; indicator = colorBase; };
+        urgent = { background = "#e53935"; border = "#e53935"; childBorder = "#e53935"; text = colorText; indicator = colorBase; };
       };
 
       seat."*".xcursor_theme = "Adwaita 24";
@@ -77,17 +78,17 @@ in {
         position = "bottom";
 
         fonts = {
-          names = [ "Inconsolata" ];
-          size = 10.0;
+          names = [ "FuraCode Nerd Font" ];
+          size = 9.0;
         };
 
         colors = {
-          background = backgroundColor;
+          background = colorBase;
           separator = "757575";
-          focusedWorkspace = { background = foregroundColor; border = backgroundColor; text = backgroundColor; };
-          activeWorkspace = { background = backgroundColor; border = backgroundColor; text = textColor; };
-          inactiveWorkspace = { background = backgroundColor; border = backgroundColor; text = inactiveTextColor; };
-          urgentWorkspace = { background = "#e53935"; border = "e53935"; text = textColor; };
+          focusedWorkspace = { background = colorMauve; border = colorBase; text = colorBase; };
+          activeWorkspace = { background = colorBase; border = colorBase; text = colorText; };
+          inactiveWorkspace = { background = colorBase; border = colorBase; text = colorSurface; };
+          urgentWorkspace = { background = "#e53935"; border = "e53935"; text = colorText; };
         };
       } ];
     };

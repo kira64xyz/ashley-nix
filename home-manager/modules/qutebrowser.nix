@@ -58,6 +58,7 @@ in {
       home-manager = "https://github.com/nix-community/home-manager";
       home-manager-manual = "https://nix-community.github.io/home-manager";
       home-manager-options = "https://rycee.gitlab.io/home-manager/options.html";
+      catppuccin = "https://github.com/catppuccin/catppuccin";
     };
   };
 }

@@ -11,9 +11,23 @@
     plugins = with pkgs.vimPlugins; [
       vim-nix
       editorconfig-nvim
-      catppuccin-nvim
       nvim-web-devicons
 
+      {
+        plugin = catppuccin-nvim;
+        config = ''
+          lua << EOF
+            vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+            require('catppuccin').setup {
+              styles = {
+                functions = "italic",
+                keywords = "italic",
+                variables = "italic",
+              },
+            }
+          EOF
+        '';
+      }
       {
         plugin = lualine-nvim;
         config = ''

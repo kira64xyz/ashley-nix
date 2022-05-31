@@ -37,7 +37,6 @@
 
     # Fonts
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    inconsolata
     noto-fonts-cjk
 
     # Yubikey
@@ -50,6 +49,6 @@
     # Misc
     alsa-utils htop-vim file
     monero qemu tmux 
-    unzip keepassxc
+    unar keepassxc
   ];
 }
