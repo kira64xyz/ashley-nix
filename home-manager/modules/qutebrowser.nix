@@ -15,6 +15,7 @@ in {
 
     settings = {
       colors.webpage.preferred_color_scheme = "dark";
+      content.javascript.enabled = false;
       downloads.location.directory = "$HOME/downloads";
 
       url = {
@@ -44,6 +45,7 @@ in {
     quickmarks = {
       dotfiles = "https://github.com/kira64xyz/ashley-nix";
       youtube = "https://vid.puffyan.us/";
+      catppuccin = "https://github.com/catppuccin/catppuccin";
 
       github = "https://github.com";
       github-notifications = "https://github.com/notifications";
@@ -53,12 +55,12 @@ in {
       nixpkgs-tracker = "https://nixpk.gs/pr-tracker.html";
       nixpkgs-manual = "https://nixos.org/manual/nixpkgs/unstable";
       hydra-trunk = "https://hydra.nixos.org/jobset/nixpkgs/trunk";
-      nixos-manual = "https://nixos.org/nixos/manual";
+      nixos = "https://nixos.org";
+      nixos-manual = "https://nixos.org/manual/nixos/unstable";
       nixos-options = "https://search.nixos.org/options?channel=unstable";
       home-manager = "https://github.com/nix-community/home-manager";
       home-manager-manual = "https://nix-community.github.io/home-manager";
       home-manager-options = "https://rycee.gitlab.io/home-manager/options.html";
-      catppuccin = "https://github.com/catppuccin/catppuccin";
     };
   };
 }

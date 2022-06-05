@@ -10,6 +10,8 @@
       EDITOR  = "nvim";
       VISUAL  = "nvim";
       LESSHST = "/dev/null";
+
+      GOPATH  = "$HOME/src/go";
     };
 
     shellOptions = [

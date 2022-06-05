@@ -49,6 +49,6 @@
     # Misc
     alsa-utils htop-vim file
     monero qemu tmux 
-    unar keepassxc
+    unzip keepassxc
   ];
 }

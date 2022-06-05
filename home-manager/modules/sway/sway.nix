@@ -65,9 +65,9 @@ in {
       };
 
       colors = {
-        focused = { background = colorRosewater; border = colorRosewater; childBorder = colorRosewater; text = colorBase; indicator = colorRosewater; };
-        focusedInactive = { background = colorBase; border = colorRosewater; childBorder = colorRosewater; text = colorSurface; indicator = colorRosewater; };
-        unfocused = { background = colorBase; border = colorRosewater; childBorder = colorBase; text = colorText; indicator = colorBase; };
+        focused = { background = colorMauve; border = colorMauve; childBorder = colorMauve; text = colorBase; indicator = colorMauve; };
+        focusedInactive = { background = colorBase; border = colorMauve; childBorder = colorMauve; text = colorSurface; indicator = colorMauve; };
+        unfocused = { background = colorBase; border = colorMauve; childBorder = colorBase; text = colorText; indicator = colorBase; };
         urgent = { background = "#e53935"; border = "#e53935"; childBorder = "#e53935"; text = colorText; indicator = colorBase; };
       };
 
@@ -88,7 +88,7 @@ in {
           focusedWorkspace = { background = colorMauve; border = colorBase; text = colorBase; };
           activeWorkspace = { background = colorBase; border = colorBase; text = colorText; };
           inactiveWorkspace = { background = colorBase; border = colorBase; text = colorSurface; };
-          urgentWorkspace = { background = "#e53935"; border = "e53935"; text = colorText; };
+          urgentWorkspace = { background = colorRosewater; border = colorRosewater; text = colorBase; };
         };
       } ];
     };
