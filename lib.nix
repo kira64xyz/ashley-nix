@@ -5,6 +5,7 @@ in
 rec {
   createSystem = profile:
     { system
+    , nixpkgs ? inputs.nixpkgs
     , hostname
     , modules ? []
     , extraConfig ? {}
@@ -13,13 +14,8 @@ rec {
     let
       _modules = modules;
     in
-    nixpkgs.lib.nixosSystem rec {
+      args.nixpkgs.lib.nixosSystem rec {
       inherit system;
-
-      specialArgs = {
-        inherit (profile) username;
-        inherit system;
-      } // inputs;
 
       modules = [({ networking.hostName = hostname; })]
         ++ _modules

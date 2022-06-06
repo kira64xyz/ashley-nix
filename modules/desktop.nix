@@ -40,7 +40,7 @@
 
   nix = {
     package = pkgs.nixUnstable;
-    settings = rec {
+    settings = {
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
     };

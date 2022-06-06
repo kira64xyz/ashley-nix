@@ -3,9 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-small.url = "github:nixos/nixpkgs/nixos-22.05-small";
   };
 
-  outputs = inputs @ { self, nixpkgs }: let
+  outputs = inputs @ { self, nixpkgs, nixpkgs-small }: let
     # TODO: Make these platform-agnostic
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -15,20 +16,17 @@
     profiles = {
       ashley = {
         username = "kira";
-
-        modules = [
-          ./configuration.nix
-        ];
       };
     };
 
     nixosConfigurations = {
       fragile = lib.createSystem profiles.ashley rec {
         inherit system;
-        specialArgs = { inherit inputs; };
         hostname = "fragile";
+        nixpkgs = inputs.nixpkgs;
 
         modules = [
+          ./modules/desktop.nix
           ./modules/hardware-configuration.nix
         ];
 
@@ -47,10 +45,11 @@
 
       desk = lib.createSystem profiles.ashley rec {
         inherit system;
-        specialArgs = { inherit inputs; };
         hostname = "desk";
+        nixpkgs = inputs.nixpkgs;
 
         modules = [
+          ./modules/desktop.nix
           ./modules/hardware-configuration.nix
         ];
 
@@ -65,6 +64,12 @@
               efi.canTouchEfiVariables = false;
             };
           };
+          programs.steam.enable = true;
+          services = {
+            openssh.enable = true;
+            zerotierone.enable = true;
+          };
+          nixpkgs.config.allowUnfree = true;
         };
       };
     };
