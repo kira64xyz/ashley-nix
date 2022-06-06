@@ -72,6 +72,38 @@
           nixpkgs.config.allowUnfree = true;
         };
       };
+
+      nixsrv = lib.createSystem profiles.ashley rec {
+        inherit system;
+        hostname = "nixsrv";
+        nixpkgs = inputs.nixpkgs-small;
+
+        modules = [
+          ./modules/server.nix
+          ./modules/services/hydra.nix
+          ./modules/services/jellyfin.nix
+          ./modules/hardware-configuration.nix
+        ];
+
+        extraConfig = {
+          networking = {
+            interfaces.enp0s31f6.ipv4.addresses = [{
+              address = "192.168.178.191";
+              prefixLength = 28;
+            }];
+          };
+
+          boot = {
+            loader = {
+              systemd-boot = {
+                enable = true;
+                configurationLimit = 10;
+              };
+              efi.canTouchEfiVariables = false;
+            };
+          };
+        };
+      };
     };
   };
 }
