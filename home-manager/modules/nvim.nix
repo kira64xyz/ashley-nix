@@ -8,8 +8,6 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-    withNodeJs = true;
-
     extraPackages = with pkgs; [
       ripgrep # For :Telescope live_grep
     ];
@@ -19,17 +17,6 @@
       editorconfig-nvim
       nvim-web-devicons
 
-      # Using the latest revision as of 2022-05-14 as previous versions now fail to start
-      (copilot-vim.overrideAttrs (attrs: {
-        version = "unstable-2022-05-09";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "github";
-          repo = "copilot.vim";
-          rev = "df203c1356b72032df32d7b0b5facb4895139b6e";
-          sha256 = "18v21b314p4firiz0xhqnfl45g5wbcigiqq4ypnhf1lgwd6ngpqd";
-        };
-      }))
       {
         plugin = catppuccin-nvim;
         config = ''

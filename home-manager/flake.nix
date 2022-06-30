@@ -3,23 +3,28 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager";
   };
 
-  outputs = { home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       username = "kira";
     in {
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        configuration = import ./home.nix;
+        pkgs = nixpkgs.legacyPackages.${system};
 
-        inherit system username;
-        homeDirectory = "/home/${username}";
-        stateVersion = "22.05";
+        modules = [
+          ./home.nix
+
+          {
+            home = {
+              username = "kira";
+              homeDirectory = "/home/kira";
+              stateVersion = "22.11";
+            };
+          }
+        ];
       };
     };
 }
