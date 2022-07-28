@@ -3,7 +3,6 @@
 {
   imports = [
     ./packages.nix
-    ./modules/alacritty.nix
     ./modules/bash.nix
     ./modules/dunst.nix
     ./modules/foot.nix

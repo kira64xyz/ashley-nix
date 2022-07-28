@@ -3,7 +3,7 @@
 let
   mod = "Mod4";
 
-  terminal = "alacritty";
+  terminal = "foot";
 
   workspaces = {
     ws1  = "1";

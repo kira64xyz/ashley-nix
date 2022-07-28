@@ -8,6 +8,8 @@
     vimAlias = true;
     vimdiffAlias = true;
 
+#    withNodeJs = true;
+
     extraPackages = with pkgs; [
       ripgrep # For :Telescope live_grep
     ];
@@ -24,11 +26,12 @@
             vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
             require('catppuccin').setup {
               styles = {
-                functions = "italic",
-                keywords = "italic",
-                variables = "italic",
+                functions = { "italic" },
+                keywords = { "italic" },
+                variables = { "italic" },
               },
             }
+            vim.cmd [[colorscheme catppuccin]]
           EOF
         '';
       }
@@ -68,6 +71,38 @@
         '';
       }
     ];
+
+#    coc = {
+#      enable = true;
+#
+#      settings = {
+#        client.snippetSupport = true;
+#
+#        suggest = {
+#          enablePreview = true;
+#          noselect = true;
+#          enablePreselect = false;
+#        };
+#
+#        languageserver = {
+#          nix = {
+#            command = "${pkgs.rnix-lsp}/bin/rnix-lsp";
+#            filetypes = [ "nix" ];
+#            rootPatterns = [
+#              "flake.lock"
+#              ".git"
+#            ];
+#          };
+#
+#          go = {
+#            command = "${pkgs.gopls}/bin/gopls";
+#            filetypes = [ "go" ];
+#            rootPatterns = [ "go.mod" ];
+#            trace.server = "verbose";
+#          };
+#        };
+#      };
+#    };
 
     extraConfig = ''
       set completeopt=noinsert,menuone,noselect
@@ -130,7 +165,6 @@
 
       " Theming
       syntax enable
-      colorscheme catppuccin
       set cursorline
       set termguicolors
       set noshowmode
